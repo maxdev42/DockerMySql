@@ -1,20 +1,20 @@
-- On pull l'image MySql depuis Docker Hub 
+- Downloading the MySql image from Docker Hub
 docker pull mysql/mysql-server:latest
 
-- on vérifie qu'elle est bien téléchargée
+- Checking that the image is correctly downloaded
 docker images
 
-- on run 
+- Running container with our image
 docker run --name=[container_name] -d mysql/mysql-server:latest
 
-- on vérifie qu'elle est en cours d'exécution
+- Checking that the container is online
 docker ps
 
-- On récupère le mot de passe de l'image depuis le fichier de logs 
+- Recovering the image password from the logs file
 docker logs XXX
 
-- On se connecter 
+- Connection to MySql on our container
 docker exec -it XXX mysql -uroot -p
 
-- On modifie le mdp 
+- Modification of MySql password
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '[newpassword]';
